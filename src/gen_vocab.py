@@ -11,11 +11,11 @@ label_vocab.add('<null>')
 
 
 for i, sen in enumerate(read_conll(os.path.abspath(sys.argv[1]))):
-    if is_projective([e.head for e in sen[1:]]):
-        for e in sen:
-        	word_vocab[e.form]+=1
-        	pos_vocab.add(e.pos)
-        	label_vocab.add(e.relation)
+	if is_projective([e.head for e in sen[1:]]):
+		for e in sen:
+			word_vocab[e.form]+=1
+			pos_vocab.add(e.pos)
+			label_vocab.add(e.relation)
 
 
 wv = dict()
